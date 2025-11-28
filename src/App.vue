@@ -1,6 +1,16 @@
 <script setup>
+import { onErrorCaptured } from "vue";
+import ErrorButton from "./components/ErrorButton.vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import Todo from "./components/Todo.vue";
+import { reactive } from "vue";
+import { ref } from "vue";
+
+const err = ref(null);
+
+onErrorCaptured((err) => {
+  err.value = err.message;
+});
 </script>
 
 <template>
@@ -20,6 +30,10 @@ import Todo from "./components/Todo.vue";
 
   <main>
     <Todo />
+    <div v-if="err">
+      There is an error {{ err }} <button @click="reserError">OK</button>
+    </div>
+    <ErrorButton />
   </main>
 </template>
 
