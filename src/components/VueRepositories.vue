@@ -1,4 +1,5 @@
 <script setup>
+import SearchRepositories from "@/SearchRepositories.vue";
 import { computed, ref } from "vue";
 const repos = ref([]);
 const loading = ref(false);
@@ -42,4 +43,6 @@ function fetchRepos() {
       <p>{{ repo.discription }}</p>
     </li>
   </ul>
+
+  <SearchRepositories />
 </template>
