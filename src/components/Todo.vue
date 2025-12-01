@@ -6,6 +6,7 @@ const vPlay = {
   },
 };
 export default {
+  props: ["name"],
   setup() {
     const state = reactive({
       todos: [],
@@ -50,7 +51,7 @@ export default {
 
 <template>
   <div>
-    <h2>Todo List</h2>
+    <h2>Todo List {{ name }}</h2>
     <ul v-for="todo in state.todos">
       <li>
         <input type="checkbox" v-model="todo.done" />

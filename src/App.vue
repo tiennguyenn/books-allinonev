@@ -2,9 +2,10 @@
 import { onErrorCaptured } from "vue";
 import ErrorButton from "./components/ErrorButton.vue";
 import HelloWorld from "./components/HelloWorld.vue";
-import Todo from "./components/Todo.vue";
 import { reactive } from "vue";
 import { ref } from "vue";
+import Test from "./components/Test.vue";
+import Todo from "./components/Todo.vue";
 
 const err = ref(null);
 
@@ -29,11 +30,8 @@ onErrorCaptured((err) => {
   </header>
 
   <main>
-    <Todo />
-    <div v-if="err">
-      There is an error {{ err }} <button @click="reserError">OK</button>
-    </div>
-    <ErrorButton />
+    <Todo name="John" />
+    <Test name="Alice" />
   </main>
 </template>
 
