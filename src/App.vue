@@ -6,6 +6,9 @@ import { reactive } from "vue";
 import { ref } from "vue";
 import Test from "./components/Test.vue";
 import Todo from "./components/Todo.vue";
+import SheepCounting from "./components/SheepCounting.vue";
+import Counter from "./components/Counter.vue";
+import VueRepositories from "./components/VueRepositories.vue";
 
 const err = ref(null);
 
@@ -30,8 +33,7 @@ onErrorCaptured((err) => {
   </header>
 
   <main>
-    <Todo name="John" />
-    <Test name="Alice" />
+    <VueRepositories />
   </main>
 </template>
 

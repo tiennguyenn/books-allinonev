@@ -1,5 +1,7 @@
 <script>
 import { onMounted, reactive } from "vue";
+import Test from "./Test.vue";
+import One from "./One.vue";
 const vPlay = {
   mounted: (el) => {
     el.play();
@@ -7,6 +9,10 @@ const vPlay = {
 };
 export default {
   props: ["name"],
+  components: {
+    One,
+    Test,
+  },
   setup() {
     const state = reactive({
       todos: [],
@@ -52,6 +58,7 @@ export default {
 <template>
   <div>
     <h2>Todo List {{ name }}</h2>
+    <One />
     <ul v-for="todo in state.todos">
       <li>
         <input type="checkbox" v-model="todo.done" />
@@ -60,5 +67,6 @@ export default {
     </ul>
     <input v-model="state.newTodo" v-focus v-chars />
     <button @click="addTodo">Add Todo</button>
+    <h2>asdfadf</h2>
   </div>
 </template>

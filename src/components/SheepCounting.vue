@@ -1,4 +1,6 @@
 <script>
+import One from "./One.vue";
+
 export default {
   data() {
     return {
@@ -10,6 +12,9 @@ export default {
       this.count += 1;
     },
   },
+  components: {
+    One,
+  },
 };
 </script>
 
@@ -18,6 +23,7 @@ export default {
     <h2>Current Count: {{ count }}</h2>
     <button @click="incrementCount">Count a Sheep</button>
   </div>
+  <One />
 </template>
 
 <style scoped>
